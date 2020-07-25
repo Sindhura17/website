@@ -25,7 +25,7 @@ SECRET_KEY = 'n-f%*kwd84ar(nqf$(67msrf__w_fi2@g^b#w4c-iu8)hju#+d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['sindhura17.pythonanywhere.com']
 
 
 # Application definition
@@ -81,7 +81,6 @@ DATABASES={
         'USER':'sindhura17',
         'PASSWORD':'sanjivini',
         'HOST':'sindhura17.mysql.pythonanywhere-services.com',
-        #'PORT':'3306',
         
     }
 }
@@ -127,8 +126,8 @@ STATIC_URL = '/static/'
 
 
 STATICFILES_DIRS=[
-    os.path.join(BASE_DIR,"media files")
+    os.path.join(BASE_DIR,'home/sindhura17/website/sj/static')
 ]
 
 MEDIA_URL='/media/'
-MEDIA_ROOT='media'
+MEDIA_ROOT='home/sindhura17/website/sj/media'
