@@ -229,7 +229,7 @@ def face(request):
     eid=request.GET.get("id")
     eobj=event.objects.filter(id=eid)
     image_url=str(eobj[0].img)
-    image_url="media/"+image_url
+    image_url="/media/"+image_url
     message=str(eobj[0].name)
     fb=upload.Facebook()
     try:
