@@ -55,7 +55,7 @@ ROOT_URLCONF = 'sj.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['/home/sindhura17/website/sj/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
