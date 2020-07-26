@@ -55,7 +55,7 @@ ROOT_URLCONF = 'sj.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['/home/sindhura17/website/sj/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -81,7 +81,7 @@ DATABASES={
         'USER':'sindhura17',
         'PASSWORD':'sanjivini',
         'HOST':'sindhura17.mysql.pythonanywhere-services.com',
-        
+
     }
 }
 
