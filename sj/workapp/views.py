@@ -84,7 +84,7 @@ def ngosign(request):
     dform=docForm()
     nform=ngoForm()
     return render(request,'workapp/sign_up.html',{'dform':dform,'nform':nform,'m':'Enter valid details'})
-
+    
 def ngosign_in(request):
     uname=request.POST.get("nusername")
     password=request.POST.get("npassword")
@@ -96,7 +96,7 @@ def ngosign_in(request):
         return HttpResponseRedirect('/workapp/nregister')
     else:
         return render(request,'home.html',{'m':'Invalid username or password'})
-
+        
 def docsign_in(request):
     uname=request.POST.get("username")
     password=request.POST.get("password")
@@ -108,7 +108,7 @@ def docsign_in(request):
         return HttpResponseRedirect('/workapp/register')
     else:
         return render(request,'home.html',{'m':'Invalid username or password'})
-
+   
 
 def nregister(request):
     try:
@@ -156,14 +156,14 @@ def aux(request):
     else:
         data={"s":"failed"}
         return JsonResponse(data)
-
+        
 def viewdetails(request):
     adnum=request.POST.get("adharno")
     md=medication.objects.filter(adhar_no=adnum)
     pd=patient.objects.get(adhar_no=adnum)
     E={"md":md,"pd":pd}
-    return render(request,'workapp/patientdetails.html',E)
-
+    return render(request,'workapp/patientdetails.html',E)    
+    
 
 def eventreg(request):
     eform=eventForm(request.POST,request.FILES)
@@ -229,7 +229,7 @@ def face(request):
     eid=request.GET.get("id")
     eobj=event.objects.filter(id=eid)
     image_url=str(eobj[0].img)
-    image_url="/home/sindhura17/website/sj/media/"+image_url
+    image_url="media/"+image_url
     message=str(eobj[0].name)
     fb=upload.Facebook()
     try:
@@ -256,3 +256,10 @@ def ngo_logout(request):
     return HttpResponseRedirect('/')
 
     #return render(request,'home.html',{'m':'Please donot go back to previous page'})
+
+def event_doc(request):
+    eid=request.GET.get('eid','')
+    ed=doregis.objects.filter(evid=eid)
+    e=event.objects.get(id=eid)
+    D={'ed':ed,'eid':e}
+    return render(request,'workapp/event_doc.html',D)    
