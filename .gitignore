@@ -1,3 +1,4 @@
 sj/access_tokens.sh
 *.pyc
 sj/workapp/migrations/*
+.env
